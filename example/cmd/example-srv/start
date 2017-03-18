@@ -1,0 +1,19 @@
+#!/bin/bash
+set -e
+exec 2>&1
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd ${DIR}
+
+
+REGION=${REGION:-$AWS_DEFAULT_REGION}
+LOGLEVEL=${LOGLEVEL:-0}
+DEBUGPORT=${PORT:-8001}
+REDISURL=${REDISURL:-generic-redis-1.qa.int.yikyak.com:6379}
+
+exec ./example-srv \
+     -awsRegion=${REGION} \
+     -debugPort=${DEBUGPORT} \
+     -apiPort=${APIPORT} \
+     -internalAPIPort=${INTERNALAPIPORT} \
+     -v=${LOGLEVEL}

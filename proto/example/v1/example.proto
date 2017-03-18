@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package example;
+
+message GetResponse {
+  int32 statusCode = 1;
+  string message = 2;
+}

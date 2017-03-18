@@ -1,0 +1,4 @@
+package: github.com/coyle/go-starter
+import:
+- package: github.com/inconshreveable/log15
+  version: v2.11
